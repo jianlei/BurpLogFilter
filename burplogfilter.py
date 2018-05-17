@@ -49,6 +49,7 @@ def scrapBlocks(filename):
     blocks=None
     with open(filename, 'rb') as f:
         content=f.read()
+        content = content.decode('ISO-8859-1')
         blocks = re.findall(r'======================================================'
             r'.*?======================================================'
             r'.*?======================================================', content, re.S)
